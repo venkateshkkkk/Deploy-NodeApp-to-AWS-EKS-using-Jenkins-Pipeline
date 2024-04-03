@@ -12,7 +12,7 @@ pipeline{
       stage("build docker image"){
           steps{
               script{
-                  sh 'docker build -t venkateshkasa996/nodeapp1 . '
+                  sh 'docker build -t venkateshkasa996/nodeapp . '
               }
           }
       }
@@ -20,7 +20,7 @@ pipeline{
           steps{
                script {
                     docker.withRegistry('', DOCKERHUB_CRED) {
-                        docker.image('venkateshkasa996/nodeapp2').push()              
+                        docker.image('venkateshkasa996/nodeapp').push()              
                         
                     }
           }
